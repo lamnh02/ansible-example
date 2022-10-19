@@ -1,0 +1,12 @@
+---
+- name: setup Mysql
+  hosts: all
+  tasks:
+    - name: Ansible apt-get to get install mysql
+      become: true
+      apt:
+        name:
+          - python3-pip
+          - mysql-server
+        state: present
+        force_apt_get: yes

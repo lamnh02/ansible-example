@@ -1,0 +1,12 @@
+---
+- name: create user
+  hosts: all
+  tasks:
+    - name: create db
+      become: true
+      mysql_db:
+        login_user: root
+        login_password: 111
+        db: db_test
+        state: present
+      tags: mysql
